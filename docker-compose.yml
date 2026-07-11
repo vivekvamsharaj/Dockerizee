@@ -1,0 +1,36 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dockerized-todo-app:latest
+    container_name: todo-app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-5000}:${PORT:-5000}"
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/${MONGO_DB_NAME:-tododb}
+    depends_on:
+      - mongo
+    networks:
+      - todo-network
+
+  mongo:
+    image: mongo:7-jammy
+    container_name: todo-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - todo-network
+
+volumes:
+  mongo-data:
+
+networks:
+  todo-network:
+    driver: bridge
