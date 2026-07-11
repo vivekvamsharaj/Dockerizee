@@ -1,0 +1,31 @@
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+    --primary: #3498db;
+    --primary-hover: #2980b9;
+    --success: #2ecc71;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh;
+}
+.dashboard-container { width: 100%; max-width: 600px; background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #edf2f7; padding-bottom: 20px; }
+header h1 { margin: 0 0 5px 0; font-size: 24px; }
+header p { margin: 0; color: var(--text-muted); font-size: 14px; }
+main { display: flex; flex-direction: column; gap: 20px; }
+.card { background: #fdfdfd; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+.card h2 { margin-top: 0; font-size: 18px; margin-bottom: 15px; }
+.badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-block; }
+.badge-loading { background-color: #e2e8f0; color: var(--text-muted); }
+.badge-online { background-color: #d4edda; color: #155724; }
+.env-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.env-table th, .env-table td { padding: 10px; text-align: left; border-bottom: 1px solid #edf2f7; }
+code { background: #edf2f7; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+footer { margin-top: 30px; text-align: center; }
+.btn { background-color: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 14px; border-radius: 6px; cursor: pointer; }
+.btn:hover { background-color: var(--primary-hover); }
